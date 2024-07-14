@@ -1,31 +1,29 @@
-# selenium_assignment/settings.py
+
 
 from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
+
 SECRET_KEY = 'django-insecure--k!80wdfxt#ga&n*=v=ghj52y2d1!yd+*4qv0@6!il+n2bwx9w'
 
-# SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = True
 
-# Email settings
+
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'business.sakshi05@gmail.com'
-EMAIL_HOST_PASSWORD = 'STella101@#'
+EMAIL_HOST_PASSWORD = '-------'
 EMAIL_USE_TLS= True
 
 ALLOWED_HOSTS = []
 
-# Application definition
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -34,7 +32,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'form_submission',  # Add your app here
+    'form_submission',  
 ]
 
 MIDDLEWARE = [
@@ -68,8 +66,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'selenium_assignment.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
     'default': {
@@ -79,8 +75,7 @@ DATABASES = {
 }
 
 
-# Password validation
-# https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -98,8 +93,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# Internationalization
-# https://docs.djangoproject.com/en/5.0/topics/i18n/
+
 
 LANGUAGE_CODE = 'en-us'
 
@@ -110,13 +104,9 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
