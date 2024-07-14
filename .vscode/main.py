@@ -8,13 +8,13 @@ from selenium.webdriver.support import expected_conditions as EC
 def submit_form_and_capture_screenshot():
     chrome_driver_path = '/Users/apple/Downloads/selenium/chromedriver'
 
-    # Configure ChromeOptions
+   
     options = Options()
-    options.headless = True  # Run Chrome in headless mode
+    options.headless = True  
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
 
-    # Use ChromeService and ChromeDriver with Options
+  
     service = Service(chrome_driver_path)
     driver = webdriver.Chrome(service=service, options=options)
 
@@ -22,10 +22,10 @@ def submit_form_and_capture_screenshot():
     driver.get(form_url)
 
     try:
-        # Wait for form elements to load (increase timeout to 300 seconds)
+       
         WebDriverWait(driver, 300).until(EC.presence_of_element_located((By.XPATH, '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[1]/div/div/div[2]/div/div[1]/div/div[1]/input')))
 
-        # Fill out the form fields
+     
         name_field = WebDriverWait(driver, 300).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[1]/div/div/div[2]/div/div[1]/div/div[1]/input')))
         name_field.send_keys('Sakshi bhavesh sata')
 
@@ -50,12 +50,12 @@ def submit_form_and_capture_screenshot():
         captcha_field = WebDriverWait(driver, 300).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[8]/div/div/div[2]/div/div[1]/div/div[1]/input')))
         captcha_field.send_keys('GNFPYC')
 
-        # Submit the form
+    
         submit_button = WebDriverWait(driver, 300).until(EC.element_to_be_clickable((By.XPATH, '/html/body/div/div[3]/div')))
         submit_button.click()
 
 
-        # Capture screenshot of confirmation page
+      
         screenshot_path = 'confirmation.png'
         driver.save_screenshot(screenshot_path)
         print(f"Screenshot saved: {screenshot_path}")
@@ -65,7 +65,7 @@ def submit_form_and_capture_screenshot():
 
     return screenshot_path
 
-# Example usage:
+
 if __name__ == "__main__":
     submit_form_and_capture_screenshot()
 
